@@ -19,4 +19,4 @@ This repository provides a clean and ready-to-use LaTeX template for submitting 
 
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/XinyuanWang-Share/Elsevier-LaTeX-Template.git
+   git clone https://github.com/XWang-Share/Elsevier-LaTeX-Template.git
