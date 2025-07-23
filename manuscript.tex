@@ -1,0 +1,200 @@
+%% 
+%% Copyright 2019-2024 Elsevier Ltd
+%% 
+%% Version 2.4
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-dc documentclass for 
+%% double column output.
+
+\documentclass[a4paper,fleqn]{cas-dc}
+
+%\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage{natbib}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}    
+\usepackage{makecell}  
+\usepackage{hyperref} 
+\renewcommand*{\figureautorefname}{Fig.}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\subsubsectionautorefname}{Section}
+
+\makeatletter
+\def\thicktoprule{\noalign{\ifnum0=`}\fi\hrule height 1.2pt \futurelet
+	\@tempa\@xhline}
+\def\thickbottomrule{\noalign{\ifnum0=`}\fi\hrule height 1.2pt \futurelet
+	\@tempa\@xhline}
+\makeatother
+
+
+%%%Author definitions
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+\tsc{EP}
+\tsc{PMS}
+\tsc{BEC}
+\tsc{DE}
+%%%
+% 强制设置 figure 的前缀样式
+\usepackage{caption}
+\captionsetup[figure]{name={Fig.}}
+
+\begin{document}
+
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+\shorttitle{DASLeakNet for Leak Localization}
+\shortauthors{X. Wang et~al.}
+
+\title [mode = title]{Pinpointing Leaks in Water Pipelines Using Distributed Fiber Optic Acoustic Sensing and Deep Learning}                      
+
+\author[1]{***name1***}
+	\credit{Conceptualization, Methodology, Software, Investigation, Formal analysis, Writing - Original Draft, Visualization}
+\author[1]{***Name2***}
+	\credit{Writing - Review \& Editing}
+\corref{cor1}
+
+\affiliation[1]{organization={***department***, ***institution***}, 
+    city={***city***},
+    state={***state***},
+    postcode={***pastcode***},
+    country={***country***}}}
+
+
+
+\cortext[cor1]{Corresponding author. Email: ***address***}
+
+
+\begin{abstract}
+***your abstract***
+\end{abstract}
+
+\begin{graphicalabstract}
+\makebox[\textwidth][c]{\includegraphics{***yourGA***}}
+\end{graphicalabstract}
+
+\begin{highlights}
+\item ***Highlight1***
+\item ***Highlight2***
+\end{highlights}
+
+\begin{keywords}
+Pipeline leakage  \sep Accurate localization  \sep Distributed acoustic sensing  \sep Deep Learning  \sep Non-stationarity 
+\end{keywords}
+
+
+\maketitle
+
+\section{Introduction}
+
+	\citep{li_real-time_2024}***(Li et al,2024)
+	 
+	\citet{li_real-time_2024}***Li et al. (2024)
+	 
+	\autoref{fig: principle} 
+	
+	\autoref{tab:model_conditions}
+	
+	\autoref{sec:experiment}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=\linewidth]{Fig1.jpg}
+		\caption{***single column figname***}
+		\label{fig: principle}
+	\end{figure}
+	
+	\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=\linewidth]{Fig3.jpg}
+		\caption{***double column figname***}
+		\label{fig: principle2}
+	\end{figure*}
+
+	\begin{equation}
+		Acc = {{TP+TN}\over{TP+TN+FP+FN}}
+	\end{equation}
+	
+\renewcommand{\arraystretch}{1.2}  % 设置行高
+\begin{table*}[htbp]%\begin{table}***single column
+	\caption{Experiment conditions for different orifice diameters and pressures}
+	\label{tab:model_conditions}
+	\centering
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lllllllllll}
+		
+		\toprule 
+		\textbf{Case No.}             & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+		
+		\midrule 
+		\textbf{Orifice dia. (mm)}    & 0          & 3          & 3          & 3          & 4          & 4          & 4          & 5          & 5          & 5 \\
+		
+		\textbf{Pressure (MPa)}       & 0          & 0.2        & 0.3        & 0.4        & 0.2        & 0.3        & 0.4        & 0.2        & 0.3        & 0.4 \\
+		
+		\textbf{Leak flow rate (L/s)} & 0          & 0.088      & 0.118      & 0.120      & 0.157      & 0.195      & 0.213      & 0.217      & 0.290      & 0.330 \\
+		
+		\bottomrule
+		\multicolumn{11}{l}{***note***} \\
+	\end{tabular*}
+\end{table*}
+
+\section{Methodology and Experiment }
+
+\subsection{***sub1***}
+\label{sec:experiment}
+
+
+
+
+
+\subsubsection{***subsub1***}
+
+
+
+
+
+
+
+\section*{Declaration of generative AI and AI-assisted technologies in the writing process}
+During the preparation of this work the author(s) used ChatGPT 4o in order to improve language and readability. After using this tool/ service, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.
+% To print the credit authorship contribution details
+\printcredits
+
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\section*{Acknowledgements}
+
+This study was funded by 
+
+\bibliographystyle{manuscript}
+
+% Loading bibliography database
+\bibliography{manuscript}
+
+% Biography
+%\bio{}
+% Here goes the biography details.
+%\endbio
+
+%\bio{pic1}
+% Here goes the biography details.
+%\endbio
+
+\end{document}
+
